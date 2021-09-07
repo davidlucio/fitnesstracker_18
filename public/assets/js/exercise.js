@@ -20,7 +20,8 @@ let shouldNavigateAway = false;
 async function initExercise() {
   let workout;
 
-  if (location.search.split("=")[1] === undefined) {
+  // Had to modify this because it wasn't working properly.
+  if (location.search.split("=")[1] === undefined || location.search.split("=")[1] == "undefined") {
     workout = await API.createWorkout()
     console.log(workout)
   }
